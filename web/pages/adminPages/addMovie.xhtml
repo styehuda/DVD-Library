@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="addMovie-style.css"/>
+        <title>add movie</title>
+    </h:head>
+    <h:body>
+        <h1>Add Movie</h1>
+        <h:form>
+            <h:panelGrid columns="3" styleClass="panel">
+                <h:outputText value="Movie No :"/>
+                <h:inputText id="idinput" required="true"
+                             requiredMessage="please enter movie id"
+                             value="#{movieBean.movieid}"/>
+                <h:message for="idinput" styleClass="error"/>
+                
+                <h:outputText value="Movie Name :"/>
+                <h:inputText id="titleinput" required="true"
+                             requiredMessage="please enter movie name"
+                             value="#{movieBean.moviename}"/>
+                <h:message for="titleinput" styleClass="error"/>
+                
+                <h:outputText value="Minutes :"/>
+                <h:inputText id="mininput" required="true"
+                             requiredMessage="please enter minutes"
+                             value="#{movieBean.minutes}"/>
+                <h:message for="mininput" styleClass="error"/>
+                
+                <h:outputText value="Genre :"/>
+                <h:inputText id="genreinput" required="true"
+                             requiredMessage="please enter genre"
+                             value="#{movieBean.genre}"/>
+                <h:message for="genreinput" styleClass="error"/>
+                
+                <h:outputText value="Director :"/>
+                <h:inputText id="directinput" required="true"
+                             requiredMessage="please enter director"
+                             value="#{movieBean.director}"/>
+                <h:message for="directinput" styleClass="error"/>
+                
+                <h:outputText value="Units :"/>
+                <h:inputText id="unitinput" required="true"
+                             requiredMessage="please enter units count"
+                             value="#{movieBean.units}"/>
+                <h:message for="unitinput" styleClass="error"/>
+                
+                <h:outputText value="Units used :"/>
+                <h:inputText id="usedinput" required="true"
+                             requiredMessage="please enter units used count"
+                             value="#{movieBean.unitsused}"/>
+                <h:message for="usedinput" styleClass="error"/>
+                
+                <h:outputText value="Description :"/>
+                <h:inputText id="descinput" required="true"
+                             requiredMessage="please enter description"
+                             value="#{movieBean.description}"/>
+                <h:message for="descinput" styleClass="error"/>
+                
+                <h:outputText value="Release :"/>
+                <h:inputText id="yearinput" required="true"
+                             requiredMessage="please enter release"
+                             value="#{movieBean.release}"/>
+                <h:message for="yearinput" styleClass="error"/>
+                
+                <h:outputText value="Image :"/>
+                <h:inputText id="imginput" required="true"
+                             requiredMessage="please enter image"
+                             value="#{movieBean.image}"/>
+                <h:message for="imginput" styleClass="error"/>
+                
+                <h:outputText value="Link :"/>
+                <h:inputText id="lnkinput" required="true"
+                             requiredMessage="please enter link"
+                             value="#{movieBean.link}"/>
+                <h:message for="lnkinput" styleClass="error"/>
+            </h:panelGrid>
+            <h:commandButton value="Save movie" action="#{movieBean.addAction()}"
+                             styleClass="button"/>
+        </h:form>
+    </h:body>
+</html>
+

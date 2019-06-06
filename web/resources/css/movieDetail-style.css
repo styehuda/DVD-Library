@@ -1,0 +1,72 @@
+body
+{
+    background-color: white;
+    background-image: url("#{resource['img/details.jpg']}");
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-attachment: fixed;
+    background-size: 40% 52%;
+    text-align: center;
+    color: greenyellow;
+}
+
+h1
+{
+    font-size: 300%;
+}
+
+.panel
+{
+    color: aqua;
+    font-size: 150%;
+}
+
+.details
+{
+    color: red;
+    font-size: 130%;
+}
+
+.more
+{
+    color: blue;
+    font-size: 150%;
+}
+.img
+{
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 45%;
+    height: 55%;
+}
+
+.paneldesc
+{
+    position: absolute;
+    top:80%;
+    color: indigo;
+    font-size: 150%;
+}
+
+.lnk
+{
+    position: absolute;
+    top: 75%;
+    color: indigo; 
+    font-size: 150%;
+}
+
+.button
+{
+    background-color: greenyellow;
+    position: absolute;
+    top: 90%;
+    color: indigo;
+    font-size: 150%;
+}
+
+
+
+

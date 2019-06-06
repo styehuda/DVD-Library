@@ -1,0 +1,42 @@
+body
+{
+    background-color: aqua;
+    background-image: url("#{resource['img/order.jpg']}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 300%;
+    color: fuchsia;
+}
+
+.panel
+{
+    position: absolute;
+    left: 40%;
+    background-color: darkgreen;
+    background-repeat: no-repeat;
+    font-size: 150%;
+    color: cornsilk;
+}
+.error
+{
+    color: orange;
+    font-size: 100%;
+}
+
+.button
+{
+    background-color: red;
+    font-size: 100%;
+    color: yellow;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+}
+
+
+

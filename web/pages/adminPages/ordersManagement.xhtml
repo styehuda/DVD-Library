@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="table-style.css"/>
+        <title>Orders Management</title>
+    </h:head>
+    <h:body>
+        <h1>List Orders</h1>
+        <h:form>
+        <table class="movie-table" >
+            <tr>
+                <th class="movie-table-header">Order No</th>
+                <th class="movie-table-header">Movie No</th>
+                <th class="movie-table-header">Movie Name</th>
+    		<th class="movie-table-header">User I.D</th>
+                <th class="movie-table-header">User Name</th>
+    		<th class="movie-table-header">Order Date</th>
+                <th class="movie-table-header">Returned </th>
+                <th class="movie-table-header">Edit</th>
+                <th class="movie-table-header">Remove</th>
+            </tr>
+            <tbody>
+                <ui:repeat value="#{orderBean.orders}" var="order" varStatus="status">
+                    <h:panelGroup rendered="#{status.even}">
+                        <tr>
+                            <td class="movie-table-even-row">#{order.orderid}</td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.movieid}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.movieid}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.moviename}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.moviename}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.userid}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.userid}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.username}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.username}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.orderdate}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.orderdate}" rendered="#{not order.editable}">
+                                    <f:convertDateTime pattern="yyyy-mm-dd"/>
+                                </h:outputText>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{order.returned}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.returned}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="edit order" action="#{orderBean.editAction(order)}"
+                                           rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="delete order" action="#{orderBean.deleteAction(order)}"
+                                           rendered="#{not order.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{status.odd}">
+                        <tr>
+                            <td class="movie-table-odd-row">#{order.orderid}</td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.movieid}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.movieid}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.moviename}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.moviename}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.userid}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.userid}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.username}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.username}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.orderdate}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.orderdate}" rendered="#{not order.editable}">
+                                    <f:convertDateTime pattern="yyyy-mm-dd"/>
+                                </h:outputText>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{order.returned}" rendered="#{order.editable}"/>
+                                <h:outputText value="#{order.returned}" rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="edit order" action="#{orderBean.editAction(order)}"
+                                           rendered="#{not order.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="delete order" action="#{orderBean.deleteAction(order)}"
+                                           rendered="#{not order.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                </ui:repeat>
+                <h:commandButton value="Save Changes" action="#{orderBean.saveAction()}" styleClass="button"/>
+                <h:commandButton value="Add Order" action="/pages/adminPages/addOrder" styleClass="button2" />
+            </tbody>
+        </table>
+            <h:commandButton value="back" action="/pages/adminPages/adminHomePage" styleClass="button3"/>
+        </h:form>
+    </h:body>
+</html>
+

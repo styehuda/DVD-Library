@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="index-style.css"/>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <h1>Please login or create an account</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputText value="User Name:" />
+                <h:inputText id="name" value="#{userBean.username}" required="true"
+                             requiredMessage="please enter username"/>
+                <h:message for="name" styleClass="error"/>
+                <h:outputText value="Password:" />
+                <h:inputSecret id="pass" value="#{userBean.password}" required="true"
+                               requiredMessage="please enter password"/>
+                <h:message for="pass" styleClass="error"/>
+                <h:commandButton value="Login"  action="#{userBean.login()}" styleClass="button"/>
+                <h:commandButton value="New Account" immediate="true" action="/pages/newAccount" 
+                                 styleClass="button"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

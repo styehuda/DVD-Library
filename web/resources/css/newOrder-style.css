@@ -1,0 +1,41 @@
+html
+{
+    background-color: background;
+    background: url("#{resource['img/order.jpg']}");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  cover;
+    color: blue;
+    text-align: center;
+}
+
+.panel
+{
+    font-size: 150%;
+    background-color: rgba(255, 0, 0, 0.5); 
+    position: absolute;
+    right: 40%;
+    color: blue;
+}
+
+.button
+{
+    background-color: greenyellow;
+    color: black;
+    font-size: 100%;
+    position: absolute;
+    right: 30%;
+    bottom: 20%;
+}
+
+.button2
+{
+    background-color: greenyellow;
+    color: black;
+    font-size: 100%;
+    position: absolute;
+    right: 60%;
+    bottom: 20%;
+}
+

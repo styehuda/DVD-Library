@@ -1,0 +1,57 @@
+body
+{
+    background-color: cyan;
+}
+
+h1
+{
+    font-size: 150%;
+    text-align: center;
+    color: blue; 
+}
+
+.review-table{
+    position: absolute;
+    left: 30%;
+    border-collapse: collapse;
+}
+
+.review-table-header{
+        font-size: 150%;
+	text-align:center;
+	background:none repeat 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+
+
+.review-table-row{
+        font-size: 150%;
+	text-align:center;
+	background:none repeat 0 0 yellow;
+	border-top:1px solid #BBBBBB;
+}
+
+.title
+{
+    font-size: 150%;
+    color: black;
+}
+
+.button
+{
+    background-color: greenyellow;
+    color: black;
+    font-size: 100%;
+    position: absolute;
+    right: 30%;
+    bottom: 20%;
+}
+
+.lnk
+{
+    font-size: 125%;
+    position: absolute;
+    right: 47%;
+    bottom: 40%;
+}

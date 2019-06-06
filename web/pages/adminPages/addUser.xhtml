@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="addUser-style.css"/>
+        <title>add user</title>
+    </h:head>
+    <h:body>
+        <h1>Add User</h1>
+        <h:form>
+            <h:panelGrid columns="3" styleClass="panel">
+                <h:outputText value="User I.D :"/>
+                <h:inputText id="idInput" required="true"
+                             requiredMessage="please enter user i.d"
+                             value="#{userBean.userid}"/>
+                <h:message for="idInput" styleClass="error"/>
+                
+                <h:outputText value="First Name :"/>
+                <h:inputText id="firstinput" required="true"
+                             requiredMessage="please enter first name"
+                             value="#{userBean.firstname}"/>
+                <h:message for="firstinput" styleClass="error"/>
+                
+                <h:outputText value="Last Name :"/>
+                <h:inputText id="lastinput" required="true"
+                             requiredMessage="please enter last name"
+                             value="#{userBean.lastname}"/>
+                <h:message for="lastinput" styleClass="error"/>
+                
+                <h:outputText value="User Name :"/>
+                <h:inputText id="userinput" required="true"
+                             requiredMessage="please enter username"
+                             value="#{userBean.username}"/>
+                <h:message for="userinput" styleClass="error"/>
+                
+                <h:outputText value="Password :"/>
+                <h:inputText id="passinput" required="true"
+                             requiredMessage="please enter password"
+                             value="#{userBean.password}"/>
+                <h:message for="passinput" styleClass="error"/>
+                
+                <h:outputText value="Email :"/>
+                <h:inputText id="emailinput" required="true"
+                             requiredMessage="please enter email"
+                             value="#{userBean.email}"/>
+                <h:message for="emailinput" styleClass="error"/>
+                
+                <h:outputText value="Phon :"/>
+                <h:inputText id="phoninput" required="true"
+                             requiredMessage="please enter phon number"
+                             value="#{userBean.phon}"/>
+                <h:message for="phoninput" styleClass="error"/>
+                 
+            </h:panelGrid>
+            <h:commandButton value="Save user" action="#{userBean.addAction(admin)}" styleClass="button"/>
+        </h:form>
+    </h:body>
+</html>
+

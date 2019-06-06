@@ -1,0 +1,59 @@
+body
+{
+    background-color: pink;
+    color: blue;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 200%;
+}
+
+.panel
+{
+    font-size: 150%;
+    background-color: antiquewhite;
+    position: absolute;
+    right: 35%;
+    color: blue;
+}
+
+.title
+{
+    font-size: 160%;
+    color: black;
+}
+
+.button
+{
+    background-color: greenyellow;
+    color: black;
+    font-size: 100%;
+    position: absolute;
+    right: 30%;
+    bottom: 20%;
+}
+
+.button2
+{
+    background-color: greenyellow;
+    color: black;
+    font-size: 100%;
+    position: absolute;
+    right: 60%;
+    bottom: 20%;
+}
+
+.lnk
+{
+    font-size: 150%;
+    position: absolute;
+    right: 47%;
+    bottom: 20%;
+}
+
+.error{
+    color: red;
+}
+

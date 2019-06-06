@@ -1,0 +1,40 @@
+body
+{
+    background-color: white;
+    background-image: url("#{resource['img/list.jpg']}");
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-attachment: fixed;
+    background-size: 50% 90%;
+    color: gold;
+    text-align: center;
+}
+
+.grid-item-even 
+{
+    position: static;
+    left: 0%;
+    width: 50%;
+    background:none repeat 0 0 blue;
+    padding: 20px;
+    font-size: 130%;
+    color: white;
+    text-align: center;
+}
+
+.grid-item-odd
+{
+    position: static;
+    right:  0%;
+    width: 50%;
+    background:none repeat 0 0 white;
+    padding: 20px;
+    font-size: 130%;
+    color: blue;
+    text-align: center;
+}
+
+.link
+{
+    color: red;
+}

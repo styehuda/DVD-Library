@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="homePage-style.css"/>
+        <title>Home Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>GOOD TIME</h1>
+            <h2>#{userBean.username} ,Welcome back</h2>
+            <h2>Please select what you want to perform</h2>
+            <h:panelGrid columns="2" styleClass="panel">
+                <h:outputText value="search:"/>
+                <h:inputText value="#{search.word}"/>
+            </h:panelGrid>
+            <h:commandButton value="result" action="#{search.resultList()}" styleClass="button"/>
+            <h:commandButton value="user information" action="#{userBean.userPage()}" styleClass="user"/>
+            <h:commandButton value="list movies" action="/pages/userPages/moviesList"
+                                     styleClass="movies" />
+            <h:commandButton value="drama" action="/pages/userPages/dramaList"
+                                     styleClass="dr" />
+            <h:commandButton value="comedy" action="/pages/userPages/comedyList"
+                                     styleClass="co" />
+            <h:commandButton value="romance" action="/pages/userPages/romanceList"
+                                     styleClass="ro" />
+            <h:commandButton value="fantasy" action="/pages/userPages/fantasyList"
+                                     styleClass="fa" />
+            <h:commandButton value="thriller" action="/pages/userPages/thrillerList"
+                                     styleClass="th" />
+            <h:commandButton value="action" action="/pages/userPages/actionList"
+                                     styleClass="ac" />
+            <h:commandButton value="animation" action="/pages/userPages/animationList"
+                                     styleClass="an" />
+        </h:form>
+    </h:body>
+</html>
+

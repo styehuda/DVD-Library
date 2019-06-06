@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="userPage-style.css"/>
+        <title>user page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>#{userBean.username} - Personal Data</h1>
+            <h:panelGrid>
+                <h:panelGrid columns="3" styleClass="panel">
+                    
+                    <h:outputText value="I.D :" styleClass="title"/>
+                    <h:outputText/>
+                    <h:outputText value="#{userBean.userid}"/>
+                    
+                    <h:outputText value="First name :" styleClass="title"/>
+                    <h:inputText id="firstInput" required="true"
+                                 requiredMessage="please enter your firstname"
+                                 value= "#{userBean.firstname}"
+                                 validatorMessage="first name must be fewer then 30 character"
+                                 rendered="#{userBean.editable}">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+                    <h:message for="firstInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.firstname}" rendered="#{not userBean.editable}"/>
+                
+                    <h:outputText value="Last name :" styleClass="title"/>
+                    <h:inputText id="lastInput" required="true"
+                             requiredMessage="please enter your last name"
+                             value="#{userBean.lastname}"
+                             validatorMessage="last name must be fewer then 30 character"
+                             rendered="#{userBean.editable}">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+                    <h:message for="lastInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.lastname}" rendered="#{not userBean.editable}"/>
+                
+                    <h:outputText value="User name :" styleClass="title"/>
+                    <h:inputText id="userInput" required="true"
+                             requiredMessage="please enter your user name"
+                             value="#{userBean.username}"
+                             validatorMessage="user name must be fewer then 30 character"
+                             rendered="#{userBean.editable}">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+                    <h:message for="userInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.username}" rendered="#{not userBean.editable}"/>
+                
+                    <h:outputText value="Password :" styleClass="title"/>
+                    <h:inputText id="passInput" required="true"
+                             requiredMessage="please enter your password"
+                             value="#{userBean.password}"
+                             validatorMessage="password must be fewer then 30 character"
+                             rendered="#{userBean.editable}">
+                        <f:validateLength maximum="30"/>
+                    </h:inputText>
+                    <h:message for="passInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.password}" rendered="#{not userBean.editable}"/>
+                
+                    <h:outputText value="Email :" styleClass="title"/>
+                    <h:inputText id="emailInput" required="true"
+                             requiredMessage="please enter your email"
+                             value="#{userBean.email}"
+                             validatorMessage="Invalid email address format"
+                             rendered="#{userBean.editable}">
+                        <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+                    </h:inputText>
+                    <h:message for="emailInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.email}" rendered="#{not userBean.editable}"/>
+                
+                    <h:outputText value="Phon :" styleClass="title"/>
+                    <h:inputText id="phonInput" required="true"
+                             requiredMessage="please enter your phon number"
+                             value="#{userBean.phon}"
+                             validatorMessage="Invalid phon number"
+                             rendered="#{userBean.editable}">
+                        <f:validateRegex pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{7}"/>
+                    </h:inputText>
+                    <h:message for="phonInput" styleClass="error"/>
+                    <h:outputText value="#{userBean.phon}" rendered="#{not userBean.editable}"/>
+                    
+                </h:panelGrid>
+                <h:commandLink value="edit user" action="#{userBean.editAction()}" rendered="#{not userBean.editable}"
+                               styleClass="lnk"/>
+                <h:commandButton value="Save Changes" action="#{userBean.saveAction()}" styleClass="button"/>
+                <h:commandButton value="User history" action="/pages/userPages/userHistory" styleClass="button2"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

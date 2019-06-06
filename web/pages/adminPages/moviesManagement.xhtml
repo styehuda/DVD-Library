@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="table-style.css"/>
+        <title>Movies Management</title>
+    </h:head>
+    <h:body>
+        <h1>List Movies</h1>
+        <h:form>
+        <table class="movie-table" >
+            <tr>
+                <th class="movie-table-header">Movie No</th>
+                <th class="movie-table-header">Movie Name</th>
+    		<th class="movie-table-header">Minutes</th>
+    		<th class="movie-table-header">Genre</th>
+                <th class="movie-table-header">Director</th>
+                <th class="movie-table-header">Units</th>
+    		<th class="movie-table-header">Units used</th>
+    		<th class="movie-table-header">Description</th>
+                <th class="movie-table-header">Release</th>
+                <th class="movie-table-header">Image</th>
+                <th class="movie-table-header">Link</th>
+                <th class="movie-table-header">Edit</th>
+                <th class="movie-table-header">Remove</th>
+            </tr>
+            <tbody>
+                <ui:repeat value="#{movieBean.movies}" var="movie" varStatus="status">
+                    <h:panelGroup rendered="#{status.even}">
+                        <tr>
+                            <td class="movie-table-even-row">#{movie.movieid}</td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.moviename}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.moviename}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.minutes}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.minutes}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.genre}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.genre}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.director}"  rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.director}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.units}"  rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.units}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.unitsused}"  rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.unitsused}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.description}" rendered="#{movie.editable}"/>
+                                <h:commandLink value="to full description" rendered="#{not movie.editable}"
+                                               action="#{movieBean.descMovie()}">
+                                    <f:param name="desc" value="#{movie.description}"/>
+                                </h:commandLink>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.release}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.release}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.image}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.image}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{movie.link}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.link}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="edit movie" action="#{movieBean.editAction(movie)}"
+                                           rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="delete movie" action="#{movieBean.deleteAction(movie)}"
+                                           rendered="#{not movie.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{status.odd}">
+                        <tr>
+                            <td class="movie-table-odd-row">#{movie.movieid}</td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.moviename}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.moviename}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.minutes}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.minutes}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.genre}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.genre}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.director}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.director}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.units}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.units}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.unitsused}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.unitsused}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.description}" rendered="#{movie.editable}"/>
+                                <h:commandLink value="to full description" rendered="#{not movie.editable}"
+                                               action="#{movieBean.descMovie()}">
+                                    <f:param name="desc" value="#{movie.description}"/>
+                                </h:commandLink>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.release}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.release}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.image}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.image}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{movie.link}" rendered="#{movie.editable}"/>
+                                <h:outputText value="#{movie.link}" rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="edit movie" action="#{movieBean.editAction(movie)}"
+                                               rendered="#{not movie.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="delete movie" action="#{movieBean.deleteAction(movie)}"
+                                           rendered="#{not movie.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                </ui:repeat>
+                <h:commandButton value="Save Changes" action="#{movieBean.saveAction()}" styleClass="button"/>
+                <h:commandButton value="Add Movie" action="/pages/adminPages/addMovie" styleClass="button2" />
+            </tbody>
+        </table>
+            <h:commandButton value="back" action="/pages/adminPages/adminHomePage" styleClass="button3"/>
+        </h:form>
+    </h:body>
+</html>
+

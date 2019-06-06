@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="addOrder-style.css"/>
+        <title>add order</title>
+    </h:head>
+    <h:body>
+        <h1>Add Order</h1>
+        <h:form>
+            <h:panelGrid columns="3" styleClass="panel">
+                <h:outputText value="Order No :"/>
+                <h:inputText id="idInput" required="true"
+                             requiredMessage="please enter order i.d"
+                             value="#{orderBean.orderid}"/>
+                <h:message for="idInput" styleClass="error"/>
+                
+                <h:outputText value="User I.D :"/>
+                <h:inputText id="userinput" required="true"
+                             requiredMessage="please enter user id"
+                             value="#{orderBean.userid}"/>
+                <h:message for="userinput" styleClass="error"/>
+                
+                <h:outputText value="User Name :"/>
+                <h:inputText id="usernameinput" required="true"
+                             requiredMessage="please enter user name"
+                             value="#{orderBean.username}"/>
+                <h:message for="usernameinput" styleClass="error"/>
+                
+                <h:outputText value="Movie No :"/>
+                <h:inputText id="movieinput" required="true"
+                             requiredMessage="please enter movie id"
+                             value="#{orderBean.movieid}"/>
+                <h:message for="movieinput" styleClass="error"/>
+                
+                <h:outputText value="Movie Name :"/>
+                <h:inputText id="movienameinput" required="true"
+                             requiredMessage="please enter movie name"
+                             value="#{orderBean.moviename}"/>
+                <h:message for="movienameinput" styleClass="error"/>
+                
+                <h:outputText value="Order Date :"/>
+                <h:inputText id="dateinput" required="true"
+                             requiredMessage="please enter order date"
+                             value="#{orderBean.orderdate}"/>
+                <h:message for="dateinput" styleClass="error"/>
+                
+                <h:outputText value="Returned:"/>
+                <h:inputText id="returninput" required="true"
+                             requiredMessage="please enter 'y' or 'n' "
+                             value="#{orderBean.returned}"/>
+                <h:message for="returninput" styleClass="error"/>
+                 
+            </h:panelGrid>
+            <h:commandButton value="Save order" action="#{orderBean.addAction(admin)}" styleClass="button"/>
+        </h:form>
+    </h:body>
+</html>
+

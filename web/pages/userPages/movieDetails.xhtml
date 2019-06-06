@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="movieDetail-style.css"/>
+        <title>Movie Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>#{movieBean.moviename}</h1>
+            <h:panelGrid columns="2">
+                <h:panelGrid columns="2" styleClass="panel">
+                    <h:outputText value="Movie No :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.movieid}"/>
+                
+                    <h:outputText value="Director :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.director}"/>
+                
+                    <h:outputText value="Minutes :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.minutes}"/>
+                
+                    <h:outputText value="Genre :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.genre}"/>
+                
+                    <h:outputText value="Release :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.release}"/>
+                
+                    <h:outputText value="Units :" styleClass="details"/>
+                    <h:outputText value="#{movieBean.available}"/>
+                    
+                    <h:outputLink value="#{movieBean.link}" >
+                        <h:outputText value="more details..." styleClass="more"/>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:graphicImage value="#{movieBean.image}" styleClass="img"/>
+                 
+                <h:panelGrid columns="2" styleClass="paneldesc">
+                    <h:outputText value="Description :"/>
+                    <h:outputText value="#{movieBean.description}"/>
+                </h:panelGrid>
+                
+            </h:panelGrid>
+            <h:commandLink value="Invite a movie" action="#{orderBean.newOrder()}" styleClass="lnk">
+                           <f:param name="moviename" value="#{movieBean.moviename}"/>
+                           <f:param name="movieid" value="#{movieBean.movieid}"/>
+                           <f:param name="username" value="#{userBean.username}"/>
+                           <f:param name="userid" value="#{userBean.userid}"/>
+                           <f:param name="available" value="#{movieBean.available}"/>
+            </h:commandLink>
+            <h:commandButton value="Reviews" action="#{movieBean.movieReviews()}" styleClass="button"/>
+        </h:form>
+    </h:body>
+</html>
+

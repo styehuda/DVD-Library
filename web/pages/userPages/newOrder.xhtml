@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="newOrder-style.css"/>
+        <title>New Order</title>
+    </h:head>
+    <h:body>
+        <h1>Order Detail</h1>
+        <h:form>
+            <h:panelGrid columns="2" styleClass="panel">
+                <h:outputText value="Order No :"/>
+                <h:outputText value="#{orderBean.currentOrder.orderid}"/>
+                
+                <h:outputText value="User I.D :"/>
+                <h:outputText value="#{orderBean.currentOrder.userid}"/>
+                
+                <h:outputText value="User Name :"/>
+                <h:outputText value="#{orderBean.currentOrder.username}"/>
+                
+                <h:outputText value="Movie No :"/>
+                <h:outputText value="#{orderBean.currentOrder.movieid}"/>
+                
+                <h:outputText value="Movie Name :"/>
+                <h:outputText value="#{orderBean.currentOrder.moviename}"/>
+                
+                <h:outputText value="Order Date :"/>
+                <h:outputText value="#{orderBean.currentOrder.orderdate}"/>
+                
+                <h:outputText value="Returned :"/>
+                <h:outputText value="#{orderBean.currentOrder.returned}"/>
+                 
+            </h:panelGrid>
+            <h:commandButton value="OK" action="#{orderBean.addAction(user)}" styleClass="button"/>
+            <h:commandButton value="Cancel" action="/pages/userPages/homePage" styleClass="button2"/>
+        </h:form>
+    </h:body>
+</html>

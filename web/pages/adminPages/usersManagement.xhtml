@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <h:outputStylesheet library="css" name="table-style.css"/>
+        <title>Users Management</title>
+    </h:head>
+    <h:body>
+        <h1>Users list</h1>
+        <h:form>
+        <table class="movie-table" >
+            <tr>
+                <th class="movie-table-header">User I.D</th>
+                <th class="movie-table-header">First Name</th>
+    		<th class="movie-table-header">Last Name</th>
+    		<th class="movie-table-header">User Name</th>
+                <th class="movie-table-header">Password</th>
+                <th class="movie-table-header">Email</th>
+    		<th class="movie-table-header">Phon</th>
+                <th class="movie-table-header">Edit</th>
+                <th class="movie-table-header">Remove</th>
+            </tr>
+            <tbody>
+                <ui:repeat value="#{userBean.users}" var="user" varStatus="status">
+                    <h:panelGroup rendered="#{status.even}">
+                        <tr>
+                            <td class="movie-table-even-row">#{user.userid}</td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.firstname}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.firstname}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.lastname}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.lastname}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.username}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.username}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.password}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.password}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.email}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.email}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:inputText value="#{user.phon}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.phon}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="edit user" action="#{userBean.editAction(user)}"
+                                           rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-even-row">
+                                <h:commandLink value="delete user" action="#{userBean.deleteAction(user)}"
+                                           rendered="#{not user.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{status.odd}">
+                        <tr>
+                            <td class="movie-table-odd-row">#{user.userid}</td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.firstname}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.firstname}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.lastname}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.lastname}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.username}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.username}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.password}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.password}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.email}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.email}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:inputText value="#{user.phon}" rendered="#{user.editable}"/>
+                                <h:outputText value="#{user.phon}" rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="edit user" action="#{userBean.editAction(user)}"
+                                           rendered="#{not user.editable}"/>
+                            </td>
+                            <td class="movie-table-odd-row">
+                                <h:commandLink value="delete user" action="#{userBean.deleteAction(user)}"
+                                           rendered="#{not user.editable}"/>
+                            </td>
+                        </tr>
+                    </h:panelGroup>
+                </ui:repeat>
+                <h:commandButton value="Save Changes" action="#{userBean.saveAction(admin)}" styleClass="button"/>
+                <h:commandButton value="Add User" action="/pages/adminPages/addUser" styleClass="button2"/>
+            </tbody>
+        </table>
+            <h:commandButton value="back" action="/pages/adminPages/adminHomePage" styleClass="button3"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,22 @@
+body
+{
+    background-color: aqua;
+    background-image: url("#{resource['img/error.png']}");
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: 50px 50px;
+    text-align: center;
+    color: red;
+}
+
+h1
+{
+    font-size: 200%;
+}
+
+.button
+{
+    background-color: red;
+    font-size: 75%;
+    color: yellow;
+}

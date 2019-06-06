@@ -1,0 +1,34 @@
+html
+{
+    background-color: background;
+    background-image: url("#{resource['img/order.jpg']}");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: blue;
+}
+
+h1
+{
+    font-size: 250%;
+}
+form
+{
+    position: absolute;
+    right: 40%;
+    text-align: center;
+    font-size: 200%;
+}
+
+.button
+{
+    font-size: 100%;
+}
+
+.error
+{
+    color: red;
+}
+

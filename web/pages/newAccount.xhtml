@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet library="css" name="newAccount-style.css"/>
+        <title>create account</title>
+    </h:head>
+    <h:body>
+        <h1>create an account</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputText value="I.D :"/>
+                <h:inputText id="idInput" required="true"
+                             requiredMessage="please enter your i.d"
+                             value="#{userBean.userid}"
+                             validatorMessage="Invalid I.D format">
+                    <f:validateRegex pattern="\d{9}"/>
+                </h:inputText>
+                <h:message for="idInput" styleClass="error"/>
+                
+                <h:outputText value="First name :"/>
+                <h:inputText id="firstInput" required="true"
+                             requiredMessage="please enter your first name"
+                             value="#{userBean.firstname}"
+                             validatorMessage="first name must be fewer then 30 character">
+                    <f:validateLength maximum="30"/>
+                </h:inputText>
+                <h:message for="firstInput" styleClass="error"/>
+                
+                <h:outputText value="Last name :"/>
+                <h:inputText id="lastInput" required="true"
+                             requiredMessage="please enter your last name"
+                             value="#{userBean.lastname}"
+                             validatorMessage="last name must be fewer then 30 character">
+                    <f:validateLength maximum="30"/>
+                </h:inputText>
+                <h:message for="lastInput" styleClass="error"/>
+                
+                <h:outputText value="User name :"/>
+                <h:inputText id="userInput" required="true"
+                             requiredMessage="please enter your user name"
+                             value="#{userBean.username}"
+                             validatorMessage="user name must be fewer then 30 character">
+                    <f:validateLength maximum="30"/>
+                </h:inputText>
+                <h:message for="userInput" styleClass="error"/>
+                
+                <h:outputText value="Password:"/>
+                <h:inputText id="passInput" required="true"
+                             requiredMessage="please enter your password"
+                             value="#{userBean.password}"
+                             validatorMessage="password must be fewer then 30 character">
+                    <f:validateLength maximum="30"/>
+                </h:inputText>
+                <h:message for="passInput" styleClass="error"/>
+                
+                <h:outputText value="Email:"/>
+                <h:inputText id="emailInput" required="true"
+                             requiredMessage="please enter your email"
+                             value="#{userBean.email}"
+                             validatorMessage="Invalid email address format">
+                    <f:validateRegex pattern="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+                </h:inputText>
+                <h:message for="emailInput" styleClass="error"/>
+                
+                <h:outputText value="Phon:"/>
+                <h:inputText id="phonInput" required="true"
+                             requiredMessage="please enter your phon number"
+                             value="#{userBean.phon}"
+                             validatorMessage="Invalid phon number">
+                    <f:validateRegex pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{7}"/>
+                </h:inputText>
+                <h:message for="phonInput" styleClass="error"/> 
+            </h:panelGrid>
+            <h:commandButton value="Save user" action="#{userBean.addAction(user)}"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,129 @@
+html
+{
+    background-image: url("#{resource['img/homePage.png']}");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: blanchedalmond;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 300%;
+}
+
+h2
+{
+    font-size: 200%;
+}
+.panel{
+    font-size: 150%;
+    position: absolute;
+    top: 10%;
+    right:10%;
+    width: 20%;
+    height: 60px;
+}
+
+.button{
+    font-size: 150%;
+    position: absolute;
+    top: 20%;
+    right:15%;
+    width: 10%;
+    height: 50px;
+}
+
+
+.user{
+    font-size: 150%;
+    position: absolute;
+    top: 40%;
+    right:5%;
+    width: 20%;
+    height: 50px;
+    background-color: chartreuse;
+}
+
+.movies{
+    font-size: 150%;
+    position: absolute;
+    top: 60%;
+    right:5%;
+    width: 20%;
+    height: 50px;
+    background-color: chartreuse;
+}
+
+.dr{
+    font-size: 100%;
+    position: absolute;
+    top: 30%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.co{
+    font-size: 100%;
+    position: absolute;
+    top: 37%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.ro{
+    font-size: 100%;
+    position: absolute;
+    top: 44%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.fa{
+    font-size: 100%;
+    position: absolute;
+    top: 51%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.th{
+    font-size: 100%;
+    position: absolute;
+    top: 58%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.ac{
+    font-size: 100%;
+    position: absolute;
+    top: 65%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
+.an{
+    font-size: 100%;
+    position: absolute;
+    top: 72%;
+    left:5%;
+    width: 20%;
+    height: 30px;
+    background-color: activeborder;
+}
+
